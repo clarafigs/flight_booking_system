@@ -16,7 +16,8 @@ public class Passageiro {
     }
 
     public void exibirInfo(){
-        System.out.println("\nNome: " + nome);
+        System.out.println("\n-------Passageiro:-------");
+        System.out.println("Nome: " + nome);
         System.out.println("ID: " + id);
         System.out.println("Email: " + email);
         System.out.println("\nReservas: ");

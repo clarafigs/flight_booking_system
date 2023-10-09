@@ -1,5 +1,6 @@
 package br.com.cz.reservasDeVoos.Model;
 
+
 public class Voo {
     public String numeroVoo;
     public String origem;
@@ -20,7 +21,7 @@ public class Voo {
     }
 
     public void exibirInfo() {
-        System.out.println("Numero do Voo: " + numeroVoo);
+        System.out.println("  Numero do Voo: " + numeroVoo);
         System.out.println("Origem: " + origem);
         System.out.println("Destino: " + destino);
         System.out.println("Data e hora de partida: " + dataHoraPartida);
