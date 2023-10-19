@@ -26,9 +26,14 @@ public class Passageiro extends Pessoa{
         return nome;
     }
 
-    public boolean fazerReserva(Voo voo, int numAssentos, String dataReserva){
+    public boolean fazerReserva(IVoo voo, int numAssentos, String dataReserva){
         if (numAssentos > 0) {
-            Reserva reserva = new Reserva(this, voo, dataReserva, numAssentos);
+            Reserva reserva = new Reserva(this, voo, dataReserva, numAssentos) {
+                @Override
+                public void exibirInfo() {
+
+                }
+            };
             reservas.add(reserva);
             return true;
         } else {
