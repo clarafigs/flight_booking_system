@@ -16,16 +16,17 @@ public class Aeroporto {
         this.ListaVoos = new ArrayList<>();
     }
 
-    public void adicionarVoo(Voo voo){
-        ListaVoos.add(voo);
+    public void adicionarVoo(IVoo voo){
+        ListaVoos.add((Voo) voo);
     }
 
     public Voo buscarVoo(String numeroVoo) {
-        for (Voo voo : ListaVoos) {
+        for (IVoo voo : ListaVoos) {
             if (voo.getNumeroVoo().equals(numeroVoo)) {
-                return voo;
+                return (Voo) voo;
             }
         }
+
         return null;
     }
 
@@ -33,7 +34,7 @@ public class Aeroporto {
         System.out.println("Nome do aeroporto: " + nome);
         System.out.println("Localização: " + localizacao);
         System.out.println("\nVoos disponiveis: ");
-        for (Voo voo : ListaVoos) {
+        for (IVoo voo : ListaVoos) {
             voo.exibirInfo();
         }
     }

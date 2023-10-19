@@ -1,14 +1,23 @@
 package br.com.cz.reservasDeVoos.Model;
+import java.util.ArrayList;
+import java.util.List;
 
+interface IVoo {
+    String getNumeroVoo();
+    boolean realizarReserva(int numAssentos);
 
-public class Voo {
+    void cancelarReserva(int numAssentos);
+
+    void exibirInfo();
+}
+public class Voo implements IVoo{
     public String numeroVoo;
     public String origem;
     public String destino;
     public String dataHoraPartida;
     public String dataHoraChegada;
     public int capacidadePassageiros;
-    public int assentosReservados;
+    public int assentosReservados ;
 
     public Voo (String numeroVoo, String origem, String destino, String dataHoraPartida, String dataHoraChegada, int capacidadePassageiros, int assentosReservados){
         this.numeroVoo = numeroVoo;
@@ -16,8 +25,11 @@ public class Voo {
         this.destino = destino;
         this.dataHoraPartida = dataHoraPartida;
         this.dataHoraChegada = dataHoraChegada;
+        if (capacidadePassageiros <= assentosReservados){
+            assentosReservados = capacidadePassageiros;
+        }
         this.capacidadePassageiros = capacidadePassageiros;
-        this.assentosReservados = 0;
+        this.assentosReservados = assentosReservados;
     }
 
     public void exibirInfo() {
@@ -52,4 +64,12 @@ public class Voo {
     }
 
 }
+
+
+
+
+
+
+
+
 

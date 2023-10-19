@@ -2,16 +2,13 @@ package br.com.cz.reservasDeVoos.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Passageiro {
-    public String nome;
+public class Passageiro extends Pessoa{
     public int id;
-    public String email;
     public List<Reserva>reservas;
 
-    public Passageiro(String nome, int id, String email){
-        this.nome = nome;
+    public Passageiro(String nome, int id, String email) {
+        super(nome, email);
         this.id = id;
-        this.email = email;
         this.reservas = new ArrayList<>();
     }
 
